@@ -31,7 +31,7 @@ const Home: NextPage<HomeProps> = ({ apiKey }): JSX.Element => {
   }, []);
 
   return (
-    <div className="bg-primary-dark min-h-screen font-primary-family">
+    <div className="bg-c-blue-900 min-h-screen font-kumbh-sans">
       <Header />
       <SearchField />
       <FilterField />

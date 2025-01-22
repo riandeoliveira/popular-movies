@@ -10,7 +10,7 @@ export const MovieCard = (props: MovieCardProps): JSX.Element => {
   const { favoriteMovie } = useMovie();
 
   return (
-    <div className="bg-primary-light flex px-10 py-7 rounded-lg shadow-card justify-between max-laptop-m:flex-col gap-6">
+    <div className="bg-c-blue-800 flex px-10 py-7 rounded-lg shadow-card justify-between max-laptop-m:flex-col gap-6">
       <div className="flex max-laptop-m:justify-evenly max-tablet-m:flex-col gap-6">
         <div className="flex items-center max-tablet-m:justify-center">
           <a
@@ -51,7 +51,7 @@ export const MovieCard = (props: MovieCardProps): JSX.Element => {
                 className="flex"
               >
                 <FavoriteHeart
-                  className={props.favorite ? "fill-complementary-red" : ""}
+                  className={props.favorite ? "fill-c-red-700" : ""}
                 />
               </button>
               <label
@@ -65,7 +65,7 @@ export const MovieCard = (props: MovieCardProps): JSX.Element => {
           </div>
         </div>
       </div>
-      <p className="text-neutral-light font-medium leading-8 w-[592px] flex items-center max-laptop-m:w-full">
+      <p className="text-c-gray-400 font-medium leading-8 w-[592px] flex items-center max-laptop-m:w-full">
         {props.description}
       </p>
     </div>
