@@ -1,6 +1,6 @@
+.env*
 !.env.example
 .DS_Store
-.env*
 .idea
 *.local
 *.log
