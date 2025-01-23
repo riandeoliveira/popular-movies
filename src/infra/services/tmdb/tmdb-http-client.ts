@@ -2,7 +2,7 @@ import type { Language } from "@/data/enums/language";
 import type { IHttpClient } from "@/infra/http-client";
 import { MoviesGateway } from "./movies/movies-gateway";
 
-export interface ITmdbApiOptions {
+export interface TmdbApiOptions {
   readonly client: IHttpClient;
   readonly key: string;
   readonly lang: Language;
@@ -10,7 +10,7 @@ export interface ITmdbApiOptions {
 }
 
 export class TmdbHttpClient {
-  public constructor(private readonly options: ITmdbApiOptions) {}
+  public constructor(private readonly options: TmdbApiOptions) {}
 
   public readonly movies = new MoviesGateway(this.options);
 }

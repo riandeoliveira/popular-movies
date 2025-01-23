@@ -1,22 +1,31 @@
 import { type ReactElement } from "react";
+import { EnvironmentVariable } from "./data/constants/environment-variable";
 import { Language } from "./data/enums/language";
+import { AxiosAdapter } from "./infra/adapters/axios-adapter";
 import { FetchAdapter } from "./infra/adapters/fetch-adapter";
 import { TmdbHttpClient } from "./infra/services/tmdb/tmdb-http-client";
 
 export const App = (): ReactElement => {
   const fetchMovies = async (): Promise<void> => {
-    const httpClient = new FetchAdapter();
+    const fetchAdapterHttpClient = new FetchAdapter();
+    const axiosAdapterHttpClient = new AxiosAdapter();
 
     const tmdbApi = new TmdbHttpClient({
-      client: httpClient,
+      client: axiosAdapterHttpClient,
       key: "",
       lang: Language.EN_US,
-      url: import.meta.env.VITE_TMDB_API_URL,
+      url: EnvironmentVariable.VITE_TMDB_API_URL,
     });
 
     const movies = await tmdbApi.movies.findMany("Avengers");
 
-    console.log(movies);
+    if (movies.data) {
+      console.log(movies.data);
+    }
+
+    if (movies.error) {
+      console.log(movies.error);
+    }
   };
 
   return (

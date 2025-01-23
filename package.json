@@ -19,14 +19,18 @@
   },
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
+    "axios": "^1.7.9",
+    "change-case": "^5.4.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "lodash": "^4.17.21",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwind-merge": "^2.6.0",
     "vite-plugin-svgr": "^3.3.0"
   },
   "devDependencies": {
+    "@types/lodash": "^4.17.14",
     "@types/node": "^18.19.71",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",

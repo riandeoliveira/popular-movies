@@ -1,4 +1,7 @@
-export interface ApiResponse<TResponse> {}
+export interface ApiResponse<TResponse> {
+  data?: TResponse;
+  status: number;
+}
 
 export interface IHttpClient {
   get<TResponse>(url: string): Promise<ApiResponse<TResponse>>;
