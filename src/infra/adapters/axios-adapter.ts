@@ -1,24 +1,23 @@
-import { ConversionUtil } from "@/utils/conversion-util";
 import type { AxiosError, AxiosResponse } from "axios";
 import axios from "axios";
-import type { ApiResponse, IHttpClient } from "../http-client";
+import type { ApiResponse, IHttpClient, ProblemDetails } from "../http-client";
 
 export class AxiosAdapter implements IHttpClient {
   public async get<TResponse>(url: string): Promise<ApiResponse<TResponse>> {
     try {
       const response: AxiosResponse<TResponse> = await axios.get(url);
 
-      return ConversionUtil.toCamelCase({
+      return {
         data: response.data,
         status: response.status,
-      });
+      };
     } catch (error: unknown) {
       const axiosError = error as AxiosError;
 
-      return ConversionUtil.toCamelCase({
-        data: axiosError.response?.data as TResponse,
+      return {
+        error: axiosError.response?.data as ProblemDetails,
         status: axiosError.status as number,
-      });
+      };
     }
   }
 

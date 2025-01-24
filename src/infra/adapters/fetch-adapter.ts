@@ -1,4 +1,3 @@
-import { ConversionUtil } from "@/utils/conversion-util";
 import type { ApiResponse, IHttpClient } from "../http-client";
 
 export class FetchAdapter implements IHttpClient {
@@ -6,10 +5,10 @@ export class FetchAdapter implements IHttpClient {
     const response: Response = await fetch(url);
     const data: TResponse = await response.json();
 
-    return ConversionUtil.toCamelCase({
+    return {
       data,
       status: response.status,
-    });
+    };
   }
 
   public async post<TRequest, TResponse>(

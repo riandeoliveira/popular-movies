@@ -4,16 +4,29 @@ import { Language } from "./data/enums/language";
 import { AxiosAdapter } from "./infra/adapters/axios-adapter";
 import { FetchAdapter } from "./infra/adapters/fetch-adapter";
 import { TmdbHttpClient } from "./infra/services/tmdb/tmdb-http-client";
+import { TmdbHttpError } from "./infra/services/tmdb/tmdb-http-error";
 
 export const App = (): ReactElement => {
   const fetchMovies = async (): Promise<void> => {
     const fetchAdapterHttpClient = new FetchAdapter();
     const axiosAdapterHttpClient = new AxiosAdapter();
 
+    // NOTE: E se eu passar o conversor como dependência também?
+
+    // NOTE: Ao invés de criar um formato de erro pra cada api, vou fazer o inverso, adaptar as apis para meu formato de erro
+
+    // App -> tmdbHttpClient -> MoviesGateway -> Adapter
+
+    // NOTE: Em alguma camada preciso converter a resposta de erro para o formato ProblemDetails e devolver assim
+
+    // NOTE: Recapitulando => Em alguma camada, eu preciso obter a resposta de erro do endpoint e converter para o formato ProblemDetails, mas onde?
+
     const tmdbApi = new TmdbHttpClient({
       client: axiosAdapterHttpClient,
+      httpError: new TmdbHttpError(),
       key: "",
       lang: Language.EN_US,
+      toCamelCase: true,
       url: EnvironmentVariable.VITE_TMDB_API_URL,
     });
 
