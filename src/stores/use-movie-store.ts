@@ -157,6 +157,8 @@ export const useMovieStore = defineStore("movie", () => {
   watch(locale, async () => {
     if (favoriteMovies.value.length === 0) return;
 
+    movieName.value = "";
+
     const apiUrl = import.meta.env.VITE_THE_MOVIE_DATABASE_API_URL;
     const apiKey = import.meta.env.VITE_THE_MOVIE_DATABASE_API_KEY;
 
