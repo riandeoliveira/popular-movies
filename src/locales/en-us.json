@@ -1,11 +1,15 @@
 {
+  "change-language-to": "Change language to",
   "favorite": "Favorite",
   "items-per-page": "Items per page:",
   "movie-without-overview": "This movie doesn't have an overview!",
+  "next-page": "Next page",
   "no-movies-found": "No movies found :(",
   "of": "of",
   "page": "Page",
   "popular-movies": "Popular Movies",
+  "previous-page": "Previous page",
+  "show-all-movies": "Show all movies",
   "show-my-favorite-movies-only": "Show my favorite movies only",
   "type-a-movie-to-search": "Type a movie to search..."
 }

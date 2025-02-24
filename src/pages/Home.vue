@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { useLocale } from "../composables/use-locale";
-import { useMovieStore } from "../stores/use-movie-store";
 import CheckIcon from "../components/icons/CheckIcon.vue";
 import NextIcon from "../components/icons/NextIcon.vue";
 import PreviousIcon from "../components/icons/PreviousIcon.vue";
 import SearchIcon from "../components/icons/SearchIcon.vue";
 import LocaleSwitcher from "../components/LocaleSwitcher.vue";
 import MovieCard from "../components/MovieCard.vue";
+import { useLocale } from "../composables/use-locale";
+import { useMovieStore } from "../stores/use-movie-store";
 
 const { t } = useLocale();
 const movieStore = useMovieStore();
@@ -29,6 +29,7 @@ const movieStore = useMovieStore();
       >
         <input
           type="text"
+          name="movie-search"
           autofocus
           :placeholder="t('type-a-movie-to-search')"
           maxlength="128"
@@ -47,6 +48,11 @@ const movieStore = useMovieStore();
       <div
         tabindex="0"
         role="checkbox"
+        :aria-label="
+          movieStore.filterType === 'favoriteMovies'
+            ? t('show-all-movies')
+            : t('show-my-favorite-movies-only')
+        "
         :aria-checked="movieStore.filterType === 'favoriteMovies'"
         @click="movieStore.handleChangeFilter"
         @keydown.enter="movieStore.handleChangeFilter"
@@ -59,7 +65,7 @@ const movieStore = useMovieStore();
         <CheckIcon v-if="movieStore.filterType === 'favoriteMovies'" />
       </div>
 
-      <label
+      <span
         tabindex="0"
         @click="movieStore.handleChangeFilter"
         @keydown.enter="movieStore.handleChangeFilter"
@@ -67,7 +73,7 @@ const movieStore = useMovieStore();
         class="text-lg text-white font-semibold select-none cursor-pointer max-s-720:text-base"
       >
         {{ t("show-my-favorite-movies-only") }}
-      </label>
+      </span>
     </div>
 
     <div
@@ -81,6 +87,7 @@ const movieStore = useMovieStore();
       <div class="flex items-center gap-4">
         <button
           type="button"
+          :aria-label="t('previous-page')"
           :disabled="movieStore.page <= 1"
           @click="movieStore.handlePreviousMoviesPage"
           class="cursor-pointer flex items-center justify-center w-8 h-8 rounded border border-transparent bg-c-blue-500 hover:enabled:bg-transparent hover:enabled:border-c-blue-500 transition-colors group disabled:opacity-50 disabled:cursor-not-allowed"
@@ -96,6 +103,7 @@ const movieStore = useMovieStore();
         </div>
         <button
           type="button"
+          :aria-label="t('next-page')"
           :disabled="
             movieStore.totalPages <= 1 ||
             movieStore.page >= movieStore.totalPages
@@ -110,7 +118,7 @@ const movieStore = useMovieStore();
     <div class="h-16" v-else />
 
     <div class="flex justify-center pt-16 pb-16 max-s-720:pt-8 max-s-720:pb-8">
-      <ul class="flex flex-col w-[1280px] gap-12 px-4">
+      <div class="flex flex-col w-[1280px] gap-12 px-4">
         <div
           class="bg-c-gray-600 rounded-lg h-[216px] animate-pulse"
           v-if="movieStore.isLoading"
@@ -143,7 +151,7 @@ const movieStore = useMovieStore();
             :favorite="movie.favorite"
           />
         </template>
-      </ul>
+      </div>
     </div>
   </div>
 </template>

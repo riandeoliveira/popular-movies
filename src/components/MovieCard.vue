@@ -14,7 +14,7 @@ const { t } = useLocale();
 </script>
 
 <template>
-  <li
+  <div
     class="bg-c-blue-800 flex px-10 py-7 rounded-lg shadow-card justify-between gap-6 items-center max-s-1320:flex-col max-s-720:px-5 max-s-720:py-3.5"
   >
     <div class="flex gap-6 max-s-720:flex-col">
@@ -92,5 +92,5 @@ const { t } = useLocale();
       </template>
       <template v-else>{{ t("movie-without-overview") }}</template>
     </p>
-  </li>
+  </div>
 </template>

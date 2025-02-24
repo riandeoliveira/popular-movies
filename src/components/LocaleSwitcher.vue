@@ -9,7 +9,7 @@ type LocaleData = {
   icon: typeof UsaFlagIcon;
 };
 
-const { locale } = useLocale();
+const { t, locale } = useLocale();
 
 const locales: LocaleData[] = [
   { code: "en-US", icon: UsaFlagIcon },
@@ -21,11 +21,12 @@ const locales: LocaleData[] = [
   <div class="flex justify-end p-2 gap-2">
     <button
       v-for="item in locales"
-      :key="item.code"
       type="button"
+      :aria-label="`${t('change-language-to')} ${item.code}`"
       @click="locale = item.code"
       class="cursor-pointer"
       :class="locale === item.code ? 'opacity-100' : 'opacity-25'"
+      :key="item.code"
     >
       <component :is="item.icon" />
     </button>

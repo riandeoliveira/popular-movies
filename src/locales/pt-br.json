@@ -1,11 +1,15 @@
 {
+  "change-language-to": "Alterar idioma para",
   "favorite": "Favoritar",
   "items-per-page": "Itens por página:",
   "movie-without-overview": "Este filme não possui uma descrição!",
+  "next-page": "Próxima página",
   "no-movies-found": "Nenhum filme encontrado :(",
   "of": "de",
   "page": "Página",
   "popular-movies": "Filmes Populares",
+  "previous-page": "Página anterior",
+  "show-all-movies": "Mostrar todos os filmes",
   "show-my-favorite-movies-only": "Mostrar meus filmes favoritos apenas",
   "type-a-movie-to-search": "Digite algum filme para pesquisar..."
 }
