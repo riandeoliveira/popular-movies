@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.0.8",
     "@types/lodash": "^4.17.15",
     "@vueuse/core": "^12.7.0",
     "clsx": "^2.1.1",
