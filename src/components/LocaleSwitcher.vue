@@ -6,14 +6,14 @@ import UsaFlagIcon from "./icons/UsaFlagIcon.vue";
 
 type LocaleData = {
   code: LocaleType;
-  icon: typeof BrazilFlagIcon;
+  icon: typeof UsaFlagIcon;
 };
 
 const { locale } = useLocale();
 
 const locales: LocaleData[] = [
-  { code: "pt-BR", icon: BrazilFlagIcon },
   { code: "en-US", icon: UsaFlagIcon },
+  { code: "pt-BR", icon: BrazilFlagIcon },
 ];
 </script>
 
