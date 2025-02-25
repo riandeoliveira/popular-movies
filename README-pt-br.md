@@ -5,30 +5,30 @@
 
 <div align="center">
   <img src="./.github/assets/logo.png" />
-  <h1>🚀 Popular Movies - #7DaysOfCode 🚀</h1>
+  <h1>🚀 Filmes Populares - #7DaysOfCode 🚀</h1>
 </div>
 
-## 📚 About
+## 📚 Sobre
 
-An application to search and favorite movies in the browser's Local Storage, using the [The Movie Database (TMDB)](https://www.themoviedb.org/?language=en-US) API.
+Aplicação para pesquisar e favoritar filmes no Armazenamento Local do navegador, fazendo uso da API do [The Movie Database (TMDB)](https://www.themoviedb.org/?language=pt-BR).
 
-## 🏗️ Development
+## 🏗️ Desenvolvimento
 
-This project was proposed by the challenger [Giovanna Moeller](https://www.linkedin.com/in/giovannamoeller) during the [7 Days Of Code](https://7daysofcode.io/) event from [Alura](https://www.alura.com.br/).
+Projeto proposto pela desafiante [Giovanna Moeller](https://www.linkedin.com/in/giovannamoeller) durante o [7 Days Of Code](https://7daysofcode.io/) da [Alura](https://www.alura.com.br/).
 
-## 🕹️ Features
+## 🕹️ Funcionalidades
 
-- Add/remove movies from favorites
-- Filter searched and favorite movies
-- Internationalization (en-US and pt-BR)
-- Movie pagination during display
-- Search movies by name
+- Adição/remoção de filme dos favoritos
+- Filtro de filmes pesquisados e favoritos
+- Internacionalização (en-US e pt-BR)
+- Paginação de filmes durante a exibição
+- Pesquisa de filme por nome
 
-## 💻 How to access
+## 💻 Como acessar
 
-The application is available online and can be accessed [here](https://popular-movies-six.vercel.app/).
+A aplicação está disponível online e pode ser acessada [aqui](https://popular-movies-six.vercel.app/).
 
-## 🛠️ Technologies
+## 🛠️ Tecnologias
 
 <br>
 
@@ -55,5 +55,5 @@ The application is available online and can be accessed [here](https://popular-m
 <br>
 
 <p align="center">
-  ✨ Made with 💙 by <a href="https://github.com/riandeoliveira"><strong>Rian Oliveira</strong></a> ✨
+  ✨ Feito com 💙 por <a href="https://github.com/riandeoliveira"><strong>Rian Oliveira</strong></a> ✨
 </p>
