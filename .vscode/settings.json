@@ -1,0 +1,107 @@
+{
+  //
+  // Color Highlight (Extension)
+  //
+  "color-highlight.matchWords": true,
+  //
+  // Code Spell Checker (Extension)
+  //
+  "cSpell.language": "en,pt",
+  //
+  // Diff Editor
+  //
+  "diffEditor.ignoreTrimWhitespace": true,
+  //
+  // Editor
+  //
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.linkedEditing": true,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  //
+  // ESLint (Extension)
+  //
+  "eslint.validate": ["javascript", "json", "typescript", "vue"],
+  //
+  // Files
+  //
+  "files.autoGuessEncoding": true,
+  "files.autoSave": "afterDelay",
+  "files.exclude": {
+    "**/.git": false
+  },
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": false,
+  //
+  // Git
+  //
+  "git.allowNoVerifyCommit": false,
+  "git.confirmEmptyCommits": false,
+  "git.enableSmartCommit": true,
+  "git.showPushSuccessNotification": true,
+  "git.supportCancellation": true,
+  //
+  // JavaScript
+  //
+  "javascript.suggest.completeFunctionCalls": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  //
+  // Tailwind CSS IntelliSense (Extension)
+  //
+  "tailwindCSS.colorDecorators": true,
+  //
+  // TODO Highlight (Extension)
+  //
+  "todohighlight.keywords": [
+    {
+      "backgroundColor": "#FF6D00",
+      "borderRadius": "4px",
+      "color": "#fff",
+      "text": "BUG:"
+    },
+    {
+      "backgroundColor": "#00C853",
+      "borderRadius": "4px",
+      "color": "#fff",
+      "text": "FEAT:"
+    },
+    {
+      "borderRadius": "4px",
+      "text": "FIXME:"
+    },
+    {
+      "backgroundColor": "#D50000",
+      "borderRadius": "4px",
+      "color": "#fff",
+      "text": "HOTFIX:"
+    },
+    {
+      "backgroundColor": "#2962FF",
+      "borderRadius": "4px",
+      "color": "#fff",
+      "text": "NOTE:"
+    },
+    {
+      "backgroundColor": "#00BFA5",
+      "borderRadius": "4px",
+      "color": "#fff",
+      "text": "REFACT:"
+    },
+    {
+      "borderRadius": "4px",
+      "text": "TODO:"
+    }
+  ],
+  //
+  // TypeScript
+  //
+  "typescript.suggest.completeFunctionCalls": true,
+  "typescript.updateImportsOnFileMove.enabled": "always"
+}
