@@ -4,8 +4,9 @@
   "version": "2.0.4",
   "type": "module",
   "scripts": {
-    "dev": "vite",
     "build": "vue-tsc -b && vite build",
+    "check": "biome check --write",
+    "dev": "vite",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -24,6 +25,8 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^22.13.5",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/tsconfig": "^0.7.0",
     "typescript": "~5.7.2",
