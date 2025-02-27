@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import notFoundImage from "../assets/images/not-found.png";
-import { useLocale } from "../composables/use-locale";
-import { type Movie, useMovieStore } from "../stores/use-movie-store";
+import notFoundImage from "@/assets/images/not-found.png";
+import { useLocale } from "@/composables/use-locale";
+import { type Movie, useMovieStore } from "@/stores/use-movie-store";
 import HeartIcon from "./icons/HeartIcon.vue";
 import StarIcon from "./icons/StarIcon.vue";
 

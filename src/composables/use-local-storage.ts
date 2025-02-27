@@ -1,8 +1,8 @@
+import { type LocaleType, i18n } from "@/plugins/i18n";
+import type { Movie } from "@/stores/use-movie-store";
 import { type RemovableRef, useStorage } from "@vueuse/core";
 import { onMounted } from "vue";
 import { type ZodSchema, z } from "zod";
-import { type LocaleType, i18n } from "../plugins/i18n";
-import type { Movie } from "../stores/use-movie-store";
 
 const favoriteMoviesSchema = z.array(
   z.object({

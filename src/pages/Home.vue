@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import LocaleSwitcher from "../components/LocaleSwitcher.vue";
-import MovieCard from "../components/MovieCard.vue";
-import CheckIcon from "../components/icons/CheckIcon.vue";
-import NextIcon from "../components/icons/NextIcon.vue";
-import PreviousIcon from "../components/icons/PreviousIcon.vue";
-import SearchIcon from "../components/icons/SearchIcon.vue";
-import { useLocale } from "../composables/use-locale";
-import { useMovieStore } from "../stores/use-movie-store";
+import LocaleSwitcher from "@/components/LocaleSwitcher.vue";
+import MovieCard from "@/components/MovieCard.vue";
+import CheckIcon from "@/components/icons/CheckIcon.vue";
+import NextIcon from "@/components/icons/NextIcon.vue";
+import PreviousIcon from "@/components/icons/PreviousIcon.vue";
+import SearchIcon from "@/components/icons/SearchIcon.vue";
+import { useLocale } from "@/composables/use-locale";
+import { useMovieStore } from "@/stores/use-movie-store";
 
 const { t } = useLocale();
 const movieStore = useMovieStore();

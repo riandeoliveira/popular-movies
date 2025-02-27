@@ -1,9 +1,9 @@
+import { useLocalStorage } from "@/composables/use-local-storage";
+import { useLocale } from "@/composables/use-locale";
 import _, { debounce } from "lodash";
 import { defineStore } from "pinia";
 import { ref, watch } from "vue";
 import { useToast } from "vue-toastification";
-import { useLocalStorage } from "../composables/use-local-storage";
-import { useLocale } from "../composables/use-locale";
 
 export type Movie = {
   id: number;

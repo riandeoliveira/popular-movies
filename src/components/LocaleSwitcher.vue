@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useLocale } from "../composables/use-locale";
-import type { LocaleType } from "../plugins/i18n";
+import { useLocale } from "@/composables/use-locale";
+import type { LocaleType } from "@/plugins/i18n";
 import BrazilFlagIcon from "./icons/BrazilFlagIcon.vue";
 import UsaFlagIcon from "./icons/UsaFlagIcon.vue";
 

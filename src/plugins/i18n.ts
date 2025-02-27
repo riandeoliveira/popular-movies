@@ -1,6 +1,6 @@
+import enUs from "@/locales/en-us.json";
+import ptBr from "@/locales/pt-br.json";
 import { createI18n } from "vue-i18n";
-import enUs from "../locales/en-us.json";
-import ptBr from "../locales/pt-br.json";
 
 export type LocaleType = "en-US" | "pt-BR";
 export type LocaleKeys = typeof enUs;
