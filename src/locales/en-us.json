@@ -2,6 +2,7 @@
   "change-language-to": "Change language to",
   "favorite": "Favorite",
   "items-per-page": "Items per page:",
+  "meta-description": "An application to search and favorite movies in the browser's Local Storage, using the The Movie Database (TMDB) API.",
   "movie-without-overview": "This movie doesn't have an overview!",
   "next-page": "Next page",
   "no-movies-found": "No movies found :(",

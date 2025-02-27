@@ -1,8 +1,15 @@
 {
-  "name": "popular-movies-vue",
-  "private": true,
+  "name": "popular-movies",
+  "description": "An application to search and favorite movies in the browser's Local Storage, using the The Movie Database (TMDB) API.",
   "version": "2.0.4",
+  "license": "MIT",
+  "private": true,
+  "main": "./src/main.ts",
   "type": "module",
+  "author": {
+    "name": "Rian Dias de Oliveira",
+    "email": "riandiasdeoliveira2001@gmail.com"
+  },
   "scripts": {
     "build": "vue-tsc -b && vite build",
     "check": "biome check --write",
@@ -13,6 +20,7 @@
     "@tailwindcss/vite": "^4.0.8",
     "@types/lodash": "^4.17.15",
     "@vueuse/core": "^12.7.0",
+    "@vueuse/head": "^2.0.0",
     "clsx": "^2.1.1",
     "lodash": "^4.17.21",
     "pinia": "^3.0.1",
@@ -32,5 +40,14 @@
     "typescript": "~5.7.2",
     "vite": "^6.1.0",
     "vue-tsc": "^2.2.0"
-  }
+  },
+  "keywords": [
+    "7daysofcode",
+    "alura",
+    "pinia",
+    "tailwindcss",
+    "typescript",
+    "vite",
+    "vue"
+  ]
 }
