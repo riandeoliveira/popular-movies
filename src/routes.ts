@@ -1,7 +1,7 @@
 import {
+  type RouteRecordRaw,
   createRouter,
   createWebHistory,
-  type RouteRecordRaw,
 } from "vue-router";
 import Home from "./pages/Home.vue";
 

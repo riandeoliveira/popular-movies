@@ -1,13 +1,19 @@
+import type { RemovableRef } from "@vueuse/core";
 import { onMounted, watch } from "vue";
-import { useI18n } from "vue-i18n";
-import { type LocaleKeys } from "../plugins/i18n";
+import { type ComposerTranslation, useI18n } from "vue-i18n";
+import type { LocaleKeys, LocaleType } from "../plugins/i18n";
 import { useLocalStorage } from "./use-local-storage";
 
-export const useLocale = () => {
+type UseLocale = {
+  locale: RemovableRef<LocaleType>;
+  t: ComposerTranslation;
+};
+
+export const useLocale = (): UseLocale => {
   const { locale } = useLocalStorage();
   const { t } = useI18n<{ message: LocaleKeys }>();
 
-  const updatePageMeta = () => {
+  const updatePageMeta = (): void => {
     document.title = t("popular-movies");
     document.documentElement.lang = locale.value;
   };

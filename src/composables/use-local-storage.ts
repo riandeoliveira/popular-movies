@@ -1,7 +1,7 @@
-import { useStorage, type RemovableRef } from "@vueuse/core";
+import { type RemovableRef, useStorage } from "@vueuse/core";
 import { onMounted } from "vue";
-import { z, ZodSchema } from "zod";
-import { i18n, type LocaleType } from "../plugins/i18n";
+import { type ZodSchema, z } from "zod";
+import { type LocaleType, i18n } from "../plugins/i18n";
 import type { Movie } from "../stores/use-movie-store";
 
 const favoriteMoviesSchema = z.array(
@@ -14,20 +14,25 @@ const favoriteMoviesSchema = z.array(
     vote_count: z.number().nullable().optional(),
     backdrop_path: z.string().nullable().optional(),
     favorite: z.boolean(),
-  })
+  }),
 );
 
 const localeSchema = z.enum(["en-US", "pt-BR"]);
 
-export const useLocalStorage = () => {
+type UseLocalStorage = {
+  favoriteMovies: RemovableRef<Movie[]>;
+  locale: RemovableRef<LocaleType>;
+};
+
+export const useLocalStorage = (): UseLocalStorage => {
   const favoriteMovies = useStorage<Movie[]>("favorite_movies", []);
   const locale = useStorage<LocaleType>("locale", i18n.global.locale);
 
   const tryParse = <T>(
     schema: ZodSchema,
     state: RemovableRef<T>,
-    defaultValue: T
-  ) => {
+    defaultValue: T,
+  ): void => {
     try {
       state.value = schema.parse(state.value);
     } catch {

@@ -37,20 +37,20 @@ export const useMovieStore = defineStore("movie", () => {
   const isFirstRequest = ref(true);
   const filterType = ref<"movies" | "favoriteMovies">("movies");
 
-  const deleteMovieFromFavorites = (movie: Movie) => {
+  const deleteMovieFromFavorites = (movie: Movie): void => {
     favoriteMovies.value = favoriteMovies.value.filter(
-      (item) => item.id !== movie.id
+      (item) => item.id !== movie.id,
     );
   };
 
-  const addMovieToFavorites = (movie: Movie) => {
+  const addMovieToFavorites = (movie: Movie): void => {
     favoriteMovies.value = [
       ...favoriteMovies.value,
       { ...movie, favorite: true },
     ];
   };
 
-  const handleFavoriteMovie = (movie: Movie) => {
+  const handleFavoriteMovie = (movie: Movie): void => {
     movies.value = movies.value.map((item) => {
       if (item.id === movie.id) {
         item.favorite = !item.favorite;
@@ -68,7 +68,7 @@ export const useMovieStore = defineStore("movie", () => {
   const getFilteredMovies = (): Movie[] => {
     if (filterType.value === "favoriteMovies") {
       const filteredMovies = favoriteMovies.value.filter((item) =>
-        item.title.toLowerCase().includes(movieName.value.toLowerCase())
+        item.title.toLowerCase().includes(movieName.value.toLowerCase()),
       );
 
       return _.reverse(filteredMovies);
@@ -129,7 +129,7 @@ export const useMovieStore = defineStore("movie", () => {
         vote_count: movie.vote_count,
         backdrop_path: movie.backdrop_path,
         favorite: !!favoriteMovies.value.find(
-          (favoriteMovie) => favoriteMovie.id === movie.id
+          (favoriteMovie) => favoriteMovie.id === movie.id,
         ),
       };
     });
@@ -137,18 +137,18 @@ export const useMovieStore = defineStore("movie", () => {
     if (isFirstRequest.value) isFirstRequest.value = false;
   }, 500);
 
-  const handleChangeFilter = () => {
+  const handleChangeFilter = (): void => {
     filterType.value =
       filterType.value === "movies" ? "favoriteMovies" : "movies";
   };
 
-  const handlePreviousMoviesPage = async () => {
+  const handlePreviousMoviesPage = async (): Promise<void> => {
     page.value--;
 
     await handleSearchMovies();
   };
 
-  const handleNextMoviesPage = async () => {
+  const handleNextMoviesPage = async (): Promise<void> => {
     page.value++;
 
     await handleSearchMovies();
@@ -171,7 +171,7 @@ export const useMovieStore = defineStore("movie", () => {
         });
 
         const response = await fetch(
-          `${apiUrl}/search/movie?${params.toString()}`
+          `${apiUrl}/search/movie?${params.toString()}`,
         );
 
         if (!response.ok) return movie;
@@ -195,7 +195,7 @@ export const useMovieStore = defineStore("movie", () => {
         };
 
         return updatedMovie;
-      })
+      }),
     );
 
     favoriteMovies.value = updatedMovies;

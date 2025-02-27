@@ -29,7 +29,8 @@ html {
 
   --font-kumbh-sans: "Kumbh Sans";
 
-  --shadow-card: 32.8387px 24.5482px 79px rgba(0, 0, 0, 0.15),
+  --shadow-card:
+    32.8387px 24.5482px 79px rgba(0, 0, 0, 0.15),
     23.8851px 17.855px 53.2479px rgba(0, 0, 0, 0.121406),
     16.6246px 12.4276px 34.4391px rgba(0, 0, 0, 0.10125),
     10.9035px 8.15079px 21.3701px rgba(0, 0, 0, 0.0867188),

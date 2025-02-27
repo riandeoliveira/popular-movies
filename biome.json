@@ -19,7 +19,7 @@
       },
       "correctness": {
         "noUndeclaredVariables": "warn",
-        "noUnusedVariables": "warn"
+        "noUnusedVariables": "off"
       },
       "nursery": {
         "useExplicitType": "warn"
