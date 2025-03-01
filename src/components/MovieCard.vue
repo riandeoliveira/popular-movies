@@ -2,14 +2,23 @@
 import { images } from "@/assets";
 import { useLocale } from "@/composables/use-locale";
 import { type Movie, useMovieStore } from "@/stores/use-movie-store";
+import { computed } from "vue";
 import BaseIcon from "./BaseIcon.vue";
 
 type Props = Movie;
 
-defineProps<Props>();
+const props = defineProps<Props>();
 
-const movieStore = useMovieStore();
 const { t } = useLocale();
+const movieStore = useMovieStore();
+
+const imageSrc = computed(() =>
+  props.backdrop_path
+    ? `https://image.tmdb.org/t/p/w500/${props.backdrop_path}`
+    : images.notFound,
+);
+
+const toggleFavoriteMovie = (): void => movieStore.handleFavoriteMovie(props);
 </script>
 
 <template>
@@ -25,12 +34,8 @@ const { t } = useLocale();
           class="text-white transition-colors mr-16 max-s-720:mr-0"
         >
           <img
-            :src="
-              backdrop_path
-                ? `https://image.tmdb.org/t/p/w500/${backdrop_path}`
-                : images.notFound
-            "
-            alt="Movie image"
+            :src="imageSrc"
+            :alt="t('movie-poster')"
             width="160"
             height="160"
             class="shadow-image rounded-full h-40 object-cover hover:translate-y-1 transition-transform"
@@ -53,11 +58,7 @@ const { t } = useLocale();
         <div class="flex justify-between">
           <div class="flex gap-3 items-center">
             <BaseIcon name="star" />
-            <span
-              v-if="
-                vote_average !== null && vote_average !== undefined
-              "
-            >
+            <span v-if=" vote_average !== null && vote_average !== undefined">
               {{ vote_average.toFixed(1) }}
             </span>
             <span v-else>?.?</span>
@@ -65,16 +66,16 @@ const { t } = useLocale();
           <div class="flex gap-3 items-center">
             <button
               type="button"
-              @click="movieStore.handleFavoriteMovie($props)"
+              @click="toggleFavoriteMovie"
               class="cursor-pointer"
             >
               <BaseIcon name="heart" :class="favorite ? 'fill-c-red-700' : ''" />
             </button>
             <label
               tabindex="0"
-              @click="movieStore.handleFavoriteMovie($props)"
-              @keydown.enter="movieStore.handleFavoriteMovie($props)"
-              @keydown.space.prevent="movieStore.handleFavoriteMovie($props)"
+              @click="toggleFavoriteMovie"
+              @keydown.enter="toggleFavoriteMovie"
+              @keydown.space.prevent="toggleFavoriteMovie"
               class="cursor-pointer hover:text-zinc-400 select-none"
             >
               {{ t("favorite") }}
@@ -83,12 +84,8 @@ const { t } = useLocale();
         </div>
       </div>
     </div>
-    <p
-      class="text-c-gray-400 font-medium leading-8 text-justify max-w-[592px] w-full"
-    >
-      <template v-if="overview">
-        {{ overview }}
-      </template>
+    <p class="text-c-gray-400 font-medium leading-8 text-justify max-w-[592px] w-full">
+      <template v-if="overview">{{ overview }}</template>
       <template v-else>{{ t("movie-without-overview") }}</template>
     </p>
   </div>

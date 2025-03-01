@@ -4,6 +4,7 @@
   "go-back-to-home": "Go back to home",
   "items-per-page": "Items per page:",
   "meta-description": "An application to search and favorite movies in the browser's Local Storage, using the The Movie Database (TMDB) API.",
+  "movie-poster": "Movie poster",
   "movie-without-overview": "This movie doesn't have an overview!",
   "next-page": "Next page",
   "no-movies-found": "No movies found :(",
