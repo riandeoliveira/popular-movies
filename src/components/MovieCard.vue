@@ -2,8 +2,7 @@
 import notFoundImage from "@/assets/images/not-found.png";
 import { useLocale } from "@/composables/use-locale";
 import { type Movie, useMovieStore } from "@/stores/use-movie-store";
-import HeartIcon from "./icons/HeartIcon.vue";
-import StarIcon from "./icons/StarIcon.vue";
+import BaseIcon from "./BaseIcon.vue";
 
 type Props = Movie;
 
@@ -53,7 +52,7 @@ const { t } = useLocale();
         </a>
         <div class="flex justify-between">
           <div class="flex gap-3 items-center">
-            <StarIcon />
+            <BaseIcon name="star" />
             <span
               v-if="
                 vote_average !== null && vote_average !== undefined
@@ -69,7 +68,7 @@ const { t } = useLocale();
               @click="movieStore.handleFavoriteMovie($props)"
               class="cursor-pointer"
             >
-              <HeartIcon :class="favorite ? 'fill-c-red-700' : ''" />
+              <BaseIcon name="heart" :class="favorite ? 'fill-c-red-700' : ''" />
             </button>
             <label
               tabindex="0"

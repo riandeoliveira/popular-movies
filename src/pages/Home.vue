@@ -1,10 +1,7 @@
 <script setup lang="ts">
+import BaseIcon from "@/components/BaseIcon.vue";
 import LocaleSwitcher from "@/components/LocaleSwitcher.vue";
 import MovieCard from "@/components/MovieCard.vue";
-import CheckIcon from "@/components/icons/CheckIcon.vue";
-import NextIcon from "@/components/icons/NextIcon.vue";
-import PreviousIcon from "@/components/icons/PreviousIcon.vue";
-import SearchIcon from "@/components/icons/SearchIcon.vue";
 import { useLocale } from "@/composables/use-locale";
 import { useMovieStore } from "@/stores/use-movie-store";
 
@@ -39,7 +36,7 @@ const movieStore = useMovieStore();
         />
 
         <div class="flex items-center">
-          <SearchIcon />
+          <BaseIcon name="search" />
         </div>
       </div>
     </div>
@@ -62,7 +59,7 @@ const movieStore = useMovieStore();
           movieStore.filterType === 'favoriteMovies' ? 'bg-c-blue-500' : ''
         "
       >
-        <CheckIcon v-if="movieStore.filterType === 'favoriteMovies'" />
+        <BaseIcon name="check" v-if="movieStore.filterType === 'favoriteMovies'" />
       </div>
 
       <span
@@ -92,7 +89,7 @@ const movieStore = useMovieStore();
           @click="movieStore.handlePreviousMoviesPage"
           class="cursor-pointer flex items-center justify-center w-8 h-8 rounded border border-transparent bg-c-blue-500 hover:enabled:bg-transparent hover:enabled:border-c-blue-500 transition-colors group disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          <PreviousIcon class="group-hover:group-enabled:text-c-blue-500" />
+          <BaseIcon name="previous" class="group-hover:group-enabled:text-c-blue-500" />
         </button>
         <div class="flex justify-between">
           <span>{{ t("page") }}</span>
@@ -111,7 +108,7 @@ const movieStore = useMovieStore();
           @click="movieStore.handleNextMoviesPage"
           class="cursor-pointer flex items-center justify-center w-8 h-8 rounded border border-transparent bg-c-blue-500 hover:enabled:bg-transparent hover:enabled:border-c-blue-500 transition-colors group disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          <NextIcon class="group-hover:group-enabled:text-c-blue-500" />
+          <BaseIcon name="next" class="group-hover:group-enabled:text-c-blue-500" />
         </button>
       </div>
     </div>

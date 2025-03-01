@@ -1,19 +1,18 @@
 <script setup lang="ts">
 import { useLocale } from "@/composables/use-locale";
 import type { LocaleType } from "@/plugins/i18n";
-import BrazilFlagIcon from "./icons/BrazilFlagIcon.vue";
-import UsaFlagIcon from "./icons/UsaFlagIcon.vue";
+import BaseIcon, { type IconName } from "./BaseIcon.vue";
 
 type LocaleData = {
   code: LocaleType;
-  icon: typeof UsaFlagIcon;
+  icon: IconName;
 };
 
 const { t, locale } = useLocale();
 
 const locales: LocaleData[] = [
-  { code: "en-US", icon: UsaFlagIcon },
-  { code: "pt-BR", icon: BrazilFlagIcon },
+  { code: "en-US", icon: "usa-flag" },
+  { code: "pt-BR", icon: "brazil-flag" },
 ];
 </script>
 
@@ -28,7 +27,7 @@ const locales: LocaleData[] = [
       :class="locale === item.code ? 'opacity-100' : 'opacity-25'"
       :key="item.code"
     >
-      <component :is="item.icon" />
+       <BaseIcon :name="item.icon" />
     </button>
   </div>
 </template>
