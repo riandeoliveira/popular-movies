@@ -5,7 +5,8 @@ import { useMovieStore } from "@/stores/use-movie-store";
 import { computed } from "vue";
 import BaseIcon from "./BaseIcon.vue";
 
-const { filteredMovies } = useMovie();
+const { filteredMovies, handlePreviousMoviesPage, handleNextMoviesPage } =
+  useMovie();
 const { t } = useLocale();
 const movieStore = useMovieStore();
 
@@ -27,7 +28,7 @@ const canDisablePreviousPageButton = computed(() => movieStore.page <= 1);
         type="button"
         :aria-label="t('previous-page')"
         :disabled="canDisablePreviousPageButton"
-        @click="movieStore.handlePreviousMoviesPage"
+        @click="handlePreviousMoviesPage"
         class="cursor-pointer flex items-center justify-center w-8 h-8 rounded border border-transparent bg-c-blue-500 hover:enabled:bg-transparent hover:enabled:border-c-blue-500 transition-colors group disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <BaseIcon name="previous" class="group-hover:group-enabled:text-c-blue-500" />
@@ -43,7 +44,7 @@ const canDisablePreviousPageButton = computed(() => movieStore.page <= 1);
         type="button"
         :aria-label="t('next-page')"
         :disabled="canDisableNextPageButton"
-        @click="movieStore.handleNextMoviesPage"
+        @click="handleNextMoviesPage"
         class="cursor-pointer flex items-center justify-center w-8 h-8 rounded border border-transparent bg-c-blue-500 hover:enabled:bg-transparent hover:enabled:border-c-blue-500 transition-colors group disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <BaseIcon name="next" class="group-hover:group-enabled:text-c-blue-500" />

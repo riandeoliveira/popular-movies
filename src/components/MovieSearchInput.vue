@@ -2,9 +2,11 @@
 import { useLocale } from "@/composables/use-locale";
 import { useMovieStore } from "@/stores/use-movie-store";
 import BaseIcon from "./BaseIcon.vue";
+import { useMovie } from "@/composables/use-movie";
 
 const { t } = useLocale();
 const movieStore = useMovieStore();
+const { handleSearchMovies } = useMovie()
 </script>
 
 <template>
@@ -17,7 +19,7 @@ const movieStore = useMovieStore();
         :placeholder="t('type-a-movie-to-search')"
         maxlength="128"
         v-model="movieStore.movieName"
-        @input="movieStore.handleSearchMovies"
+        @input="handleSearchMovies"
         class="bg-c-gray-600 w-full outline-none text-white font-medium text-lg max-s-720:text-base"
       />
       <div class="flex items-center">

@@ -1,19 +1,19 @@
 <script setup lang="ts">
 import { useLocale } from "@/composables/use-locale";
+import { useMovie } from "@/composables/use-movie";
 import { useMovieStore } from "@/stores/use-movie-store";
 import { computed } from "vue";
 import BaseIcon from "./BaseIcon.vue";
 
 const { t } = useLocale();
 const movieStore = useMovieStore();
+const { handleChangeFilter } = useMovie();
 
 const checkboxAriaLabel = computed(() =>
   movieStore.filterType === "favoriteMovies"
     ? t("show-all-movies")
     : t("show-my-favorite-movies-only"),
 );
-
-const toggleFilter = (): void => movieStore.handleChangeFilter();
 </script>
 
 <template>
@@ -23,9 +23,9 @@ const toggleFilter = (): void => movieStore.handleChangeFilter();
       role="checkbox"
       :aria-label="checkboxAriaLabel"
       :aria-checked="movieStore.filterType === 'favoriteMovies'"
-      @click="toggleFilter"
-      @keydown.enter="toggleFilter"
-      @keydown.space.prevent="toggleFilter"
+      @click="handleChangeFilter"
+      @keydown.enter="handleChangeFilter"
+      @keydown.space.prevent="handleChangeFilter"
       class="w-4 h-4 border-2 rounded-sm border-c-blue-500 cursor-pointer flex items-center justify-center"
       :class="movieStore.filterType === 'favoriteMovies' ? 'bg-c-blue-500' : ''"
     >
@@ -33,9 +33,9 @@ const toggleFilter = (): void => movieStore.handleChangeFilter();
     </div>
     <span
       tabindex="0"
-      @click="toggleFilter"
-      @keydown.enter="toggleFilter"
-      @keydown.space.prevent="toggleFilter"
+      @click="handleChangeFilter"
+      @keydown.enter="handleChangeFilter"
+      @keydown.space.prevent="handleChangeFilter"
       class="text-lg text-white font-semibold select-none cursor-pointer max-s-720:text-base"
     >
       {{ t("show-my-favorite-movies-only") }}

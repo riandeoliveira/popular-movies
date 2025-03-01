@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { images } from "@/assets";
 import { useLocale } from "@/composables/use-locale";
-import { type Movie, useMovieStore } from "@/stores/use-movie-store";
+import { useMovie } from "@/composables/use-movie";
+import type { Movie } from "@/stores/use-movie-store";
 import { computed } from "vue";
 import BaseIcon from "./BaseIcon.vue";
 
@@ -10,7 +11,7 @@ type Props = Movie;
 const props = defineProps<Props>();
 
 const { t } = useLocale();
-const movieStore = useMovieStore();
+const { handleFavoriteMovie } = useMovie();
 
 const imageSrc = computed(() =>
   props.backdrop_path
@@ -18,7 +19,7 @@ const imageSrc = computed(() =>
     : images.notFound,
 );
 
-const toggleFavoriteMovie = (): void => movieStore.handleFavoriteMovie(props);
+const handleToggleMovie = (): void => handleFavoriteMovie(props);
 </script>
 
 <template>
@@ -66,16 +67,16 @@ const toggleFavoriteMovie = (): void => movieStore.handleFavoriteMovie(props);
           <div class="flex gap-3 items-center">
             <button
               type="button"
-              @click="toggleFavoriteMovie"
+              @click="handleToggleMovie"
               class="cursor-pointer"
             >
               <BaseIcon name="heart" :class="favorite ? 'fill-c-red-700' : ''" />
             </button>
             <label
               tabindex="0"
-              @click="toggleFavoriteMovie"
-              @keydown.enter="toggleFavoriteMovie"
-              @keydown.space.prevent="toggleFavoriteMovie"
+              @click="handleToggleMovie"
+              @keydown.enter="handleToggleMovie"
+              @keydown.space.prevent="handleToggleMovie"
               class="cursor-pointer hover:text-zinc-400 select-none"
             >
               {{ t("favorite") }}
