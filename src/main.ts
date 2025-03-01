@@ -1,17 +1,17 @@
-import { i18n } from "@/plugins/i18n";
-import { router } from "@/routes";
+import { i18nPlugin } from "@/plugins/i18n";
 import "@/styles.css";
-import { createHead } from "@vueuse/head";
-import { createPinia } from "pinia";
 import { createApp } from "vue";
-import Toast from "vue-toastification";
 import "vue-toastification/dist/index.css";
 import App from "./App.vue";
+import { documentHeadPlugin } from "./plugins/document-head";
+import { routerPlugin } from "./plugins/router";
+import { storePlugin } from "./plugins/store";
+import { toastOptions, toastPlugin } from "./plugins/toast";
 
 createApp(App)
-  .use(createHead())
-  .use(createPinia())
-  .use(i18n)
-  .use(router)
-  .use(Toast, { bodyClassName: "font-kumbh-sans font-medium" })
+  .use(documentHeadPlugin)
+  .use(i18nPlugin)
+  .use(routerPlugin)
+  .use(storePlugin)
+  .use(toastPlugin, toastOptions)
   .mount("#app");

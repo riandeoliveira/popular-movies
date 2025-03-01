@@ -5,7 +5,7 @@ import { createI18n } from "vue-i18n";
 export type LocaleType = "en-US" | "pt-BR";
 export type LocaleKeys = typeof enUs;
 
-export const i18n = createI18n<[LocaleKeys], LocaleType>({
+export const i18nPlugin = createI18n<[LocaleKeys], LocaleType>({
   legacy: false,
   locale: "en-US",
   fallbackLocale: "en-US",

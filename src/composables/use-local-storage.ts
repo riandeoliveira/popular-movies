@@ -1,4 +1,4 @@
-import { type LocaleType, i18n } from "@/plugins/i18n";
+import { type LocaleType, i18nPlugin } from "@/plugins/i18n";
 import type { Movie } from "@/stores/use-movie-store";
 import { type RemovableRef, useStorage } from "@vueuse/core";
 import { onMounted } from "vue";
@@ -26,7 +26,7 @@ type UseLocalStorage = {
 
 export const useLocalStorage = (): UseLocalStorage => {
   const favoriteMovies = useStorage<Movie[]>("favorite_movies", []);
-  const locale = useStorage<LocaleType>("locale", i18n.global.locale);
+  const locale = useStorage<LocaleType>("locale", i18nPlugin.global.locale);
 
   const tryParse = <T>(
     schema: ZodSchema,
