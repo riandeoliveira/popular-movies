@@ -24,6 +24,10 @@ type UseLocalStorage = {
   locale: RemovableRef<LocaleType>;
 };
 
+/**
+ * Provides reactive local storage management.
+ * It ensures stored data adheres to a predefined schema using Zod validation.
+ */
 export const useLocalStorage = (): UseLocalStorage => {
   const favoriteMovies = useStorage<Movie[]>("favorite_movies", []);
   const locale = useStorage<LocaleType>("locale", i18nPlugin.global.locale);

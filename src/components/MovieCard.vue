@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import notFoundImage from "@/assets/images/not-found.png";
+import { images } from "@/assets";
 import { useLocale } from "@/composables/use-locale";
 import { type Movie, useMovieStore } from "@/stores/use-movie-store";
 import BaseIcon from "./BaseIcon.vue";
@@ -28,7 +28,7 @@ const { t } = useLocale();
             :src="
               backdrop_path
                 ? `https://image.tmdb.org/t/p/w500/${backdrop_path}`
-                : notFoundImage
+                : images.notFound
             "
             alt="Movie image"
             width="160"

@@ -1,5 +1,5 @@
-import Search from "./search.svg";
+import notFound from "./images/not-found.png";
 
-export const Icon = {
-  Search,
+export const images = {
+  notFound,
 };
