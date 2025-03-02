@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { useLocale } from "@/composables/use-locale";
+import { useMovie } from "@/composables/use-movie";
 import { useMovieStore } from "@/stores/use-movie-store";
 import BaseIcon from "./BaseIcon.vue";
-import { useMovie } from "@/composables/use-movie";
 
 const { t } = useLocale();
 const movieStore = useMovieStore();
-const { handleSearchMovies } = useMovie()
+const { handleSearchMovies } = useMovie();
 </script>
 
 <template>
