@@ -2,7 +2,7 @@
 import { images } from "@/assets";
 import { useLocale } from "@/composables/use-locale";
 import { useMovie } from "@/composables/use-movie";
-import type { Movie } from "@/stores/use-movie-store";
+import type { Movie } from "@/services/use-movie-service";
 import { computed } from "vue";
 import BaseIcon from "./BaseIcon.vue";
 

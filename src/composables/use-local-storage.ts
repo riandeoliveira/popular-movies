@@ -1,5 +1,5 @@
 import { type LocaleType, i18nPlugin } from "@/plugins/i18n";
-import type { Movie } from "@/stores/use-movie-store";
+import type { Movie } from "@/services/use-movie-service";
 import { type RemovableRef, useStorage } from "@vueuse/core";
 import { onMounted } from "vue";
 import { type ZodSchema, z } from "zod";
