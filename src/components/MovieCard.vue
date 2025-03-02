@@ -10,8 +10,8 @@ type Props = Movie;
 
 const props = defineProps<Props>();
 
-const { t } = useLocale();
 const { handleFavoriteMovie } = useMovie();
+const { t } = useLocale();
 
 const imageSrc = computed(() =>
   props.backdrop_path

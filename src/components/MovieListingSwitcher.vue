@@ -5,9 +5,9 @@ import { useMovieStore } from "@/stores/use-movie-store";
 import { computed } from "vue";
 import BaseIcon from "./BaseIcon.vue";
 
+const { handleChangeFilter } = useMovie();
 const { t } = useLocale();
 const movieStore = useMovieStore();
-const { handleChangeFilter } = useMovie();
 
 const checkboxAriaLabel = computed(() =>
   movieStore.filterType === "favoriteMovies"

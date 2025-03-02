@@ -10,10 +10,6 @@ type UseLocale = {
   t: ComposerTranslation<{ "en-US": LocaleKeys }>;
 };
 
-/**
- * Manages localization settings, including reactive locale state and translations.
- * Also updates document metadata based on the current locale.
- */
 export const useLocale = (): UseLocale => {
   const { locale } = useLocalStorage();
   const { t } = useI18n<{ message: LocaleKeys }>();
