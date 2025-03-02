@@ -1,16 +1,7 @@
-import { API_KEY, API_URL } from "@/constants";
-import { type Movie, useMovieStore } from "@/stores/use-movie-store";
+import { type Movie, useMovieService } from "@/services/use-movie-service";
+import { useMovieStore } from "@/stores/use-movie-store";
 import _ from "lodash";
 import { type ComputedRef, computed } from "vue";
-import { useToast } from "vue-toastification";
-import { useLocale } from "./use-locale";
-
-type Response = {
-  page: number;
-  results: Movie[];
-  total_pages: number;
-  total_results: number;
-};
 
 type UseMovie = {
   filteredMovies: ComputedRef<Movie[]>;
@@ -23,9 +14,8 @@ type UseMovie = {
 };
 
 export const useMovie = (): UseMovie => {
-  const { locale } = useLocale();
+  const { fetchMovies } = useMovieService();
   const movieStore = useMovieStore();
-  const toast = useToast();
 
   const filteredMovies = computed(() => getFilteredMovies());
 
@@ -49,41 +39,6 @@ export const useMovie = (): UseMovie => {
     movieStore.favoriteMovies = movieStore.favoriteMovies.filter(
       (item) => item.id !== movie.id,
     );
-  };
-
-  const fetchMovies = async (): Promise<Response | null> => {
-    const params = new URLSearchParams({
-      api_key: API_KEY,
-      language: locale.value,
-      page: movieStore.page.toString(),
-      query: movieStore.movieName.trim(),
-    });
-
-    movieStore.isLoading = true;
-
-    const errorMessage = "Erro: Não foi possível buscar a listagem de filmes!";
-
-    try {
-      const response = await fetch(
-        `${API_URL}/search/movie?${params.toString()}`,
-      );
-
-      if (!response.ok) {
-        toast.error(errorMessage);
-
-        return null;
-      }
-
-      const data: Response = await response.json();
-
-      return data;
-    } catch (error: unknown) {
-      toast.error(errorMessage);
-    } finally {
-      movieStore.isLoading = false;
-    }
-
-    return null;
   };
 
   const getFilteredMovies = (): Movie[] => {
@@ -173,19 +128,9 @@ export const useMovie = (): UseMovie => {
     movieStore.movieName = "";
 
     const movieRequests = movieStore.favoriteMovies.map(async (movie) => {
-      const params = new URLSearchParams({
-        api_key: API_KEY,
-        language: locale.value,
-        query: movie.title,
-      });
+      const data = await fetchMovies({ withoutLoading: true });
 
-      const response = await fetch(
-        `${API_URL}/search/movie?${params.toString()}`,
-      );
-
-      if (!response.ok) return movie;
-
-      const data: Response = await response.json();
+      if (!data) return movie;
 
       const foundMovie =
         data.results.find((item) => item.id === movie.id) || null;

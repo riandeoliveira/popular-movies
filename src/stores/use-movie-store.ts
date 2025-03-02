@@ -1,17 +1,7 @@
 import { useLocalStorage } from "@/composables/use-local-storage";
+import type { Movie } from "@/services/use-movie-service";
 import { defineStore } from "pinia";
 import { ref } from "vue";
-
-export type Movie = {
-  id: number;
-  title: string;
-  overview?: string | null;
-  release_date?: string | null;
-  vote_average?: number | null;
-  vote_count?: number | null;
-  backdrop_path?: string | null;
-  favorite: boolean;
-};
 
 export const useMovieStore = defineStore("movie", () => {
   const { favoriteMovies } = useLocalStorage();
