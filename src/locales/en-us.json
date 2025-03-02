@@ -1,5 +1,6 @@
 {
   "change-language-to": "Change language to",
+  "displaying": "Displaying",
   "favorite": "Favorite",
   "fetch-movies-error": "Error: Unable to search movie list!",
   "go-back-to-home": "Go back to home",
@@ -7,6 +8,7 @@
   "meta-description": "An application to search and favorite movies in the browser's Local Storage, using the The Movie Database (TMDB) API.",
   "movie-poster": "Movie poster",
   "movie-without-overview": "This movie doesn't have an overview!",
+  "movies": "movies",
   "next-page": "Next page",
   "no-movies-found": "No movies found :(",
   "of": "of",

@@ -51,5 +51,13 @@ const canDisablePreviousPageButton = computed(() => movieStore.page <= 1);
       </button>
     </div>
   </div>
-  <div class="h-16" v-else />
+  <div class="h-16 flex flex-col items-center text-white gap-2" v-else>
+    <span>
+      {{ t("displaying") }}
+      {{ filteredMovies.length }}
+      {{ t("of") }}
+      {{ movieStore.favoriteMovies.length }}
+      {{ t("movies") }}
+    </span>
+  </div>
 </template>
