@@ -11,10 +11,10 @@ const movieStore = useMovieStore();
 
 const noMoviesFound = computed(
   () =>
-    (movieStore.filterType === "movies" &&
+    (!movieStore.isDisplayingFavoriteMovies &&
       movieStore.totalResults === 0 &&
       !movieStore.isFirstRequest) ||
-    (movieStore.filterType === "favoriteMovies" &&
+    (movieStore.isDisplayingFavoriteMovies &&
       filteredMovies.value.length === 0),
 );
 </script>

@@ -42,7 +42,7 @@ export const useMovie = (): UseMovie => {
   };
 
   const getFilteredMovies = (): Movie[] => {
-    if (movieStore.filterType === "favoriteMovies") {
+    if (movieStore.isDisplayingFavoriteMovies) {
       const filteredMovies = movieStore.favoriteMovies.filter((item) =>
         item.title.toLowerCase().includes(movieStore.movieName.toLowerCase()),
       );
@@ -54,8 +54,8 @@ export const useMovie = (): UseMovie => {
   };
 
   const handleChangeFilter = (): void => {
-    movieStore.filterType =
-      movieStore.filterType === "movies" ? "favoriteMovies" : "movies";
+    movieStore.isDisplayingFavoriteMovies =
+      !movieStore.isDisplayingFavoriteMovies;
   };
 
   const handleFavoriteMovie = (movie: Movie): void => {
@@ -76,7 +76,7 @@ export const useMovie = (): UseMovie => {
   };
 
   const handleSearchMovies = _.debounce(async () => {
-    if (movieStore.filterType === "favoriteMovies") return;
+    if (movieStore.isDisplayingFavoriteMovies) return;
 
     movieStore.movies = [];
 

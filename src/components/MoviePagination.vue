@@ -18,7 +18,7 @@ const canDisablePreviousPageButton = computed(() => movieStore.page <= 1);
 </script>
 
 <template>
-  <div class="flex flex-col items-center text-white gap-2" v-if="movieStore.filterType === 'movies'">
+  <div class="flex flex-col items-center text-white gap-2" v-if="!movieStore.isDisplayingFavoriteMovies">
     <span>
       {{ t("items-per-page") }}
       {{ filteredMovies.length }}

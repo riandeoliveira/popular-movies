@@ -6,7 +6,7 @@ import { ref } from "vue";
 export const useMovieStore = defineStore("movie", () => {
   const { favoriteMovies } = useLocalStorage();
 
-  const filterType = ref<"movies" | "favoriteMovies">("movies");
+  const isDisplayingFavoriteMovies = ref(false);
   const isFirstRequest = ref(true);
   const isLoading = ref(false);
   const movieName = ref("");
@@ -17,7 +17,7 @@ export const useMovieStore = defineStore("movie", () => {
 
   return {
     favoriteMovies,
-    filterType,
+    isDisplayingFavoriteMovies,
     isFirstRequest,
     isLoading,
     movieName,
