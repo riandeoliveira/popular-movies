@@ -7,7 +7,7 @@ import { useLocalStorage } from "./use-local-storage";
 
 type UseLocale = {
   locale: RemovableRef<LocaleType>;
-  t: ComposerTranslation;
+  t: ComposerTranslation<{ "en-US": LocaleKeys }>;
 };
 
 /**
