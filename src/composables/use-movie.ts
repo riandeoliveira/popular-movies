@@ -80,7 +80,9 @@ export const useMovie = (): UseMovie => {
 
     movieStore.movies = [];
 
-    const data = await fetchMovies();
+    const data = await fetchMovies({
+      movieName: movieStore.movieName,
+    });
 
     if (!data) return;
 
@@ -128,7 +130,10 @@ export const useMovie = (): UseMovie => {
     movieStore.movieName = "";
 
     const movieRequests = movieStore.favoriteMovies.map(async (movie) => {
-      const data = await fetchMovies({ withoutLoading: true });
+      const data = await fetchMovies({
+        movieName: movie.title,
+        withoutLoading: true,
+      });
 
       if (!data) return movie;
 

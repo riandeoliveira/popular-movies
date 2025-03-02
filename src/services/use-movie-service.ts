@@ -22,11 +22,12 @@ export type Response = {
 };
 
 type FetchMoviesOptions = {
-  withoutLoading: boolean;
+  movieName: string;
+  withoutLoading?: boolean;
 };
 
 type UseMovieService = {
-  fetchMovies: (options?: FetchMoviesOptions) => Promise<Response | null>;
+  fetchMovies: (options: FetchMoviesOptions) => Promise<Response | null>;
 };
 
 export const useMovieService = (): UseMovieService => {
@@ -35,13 +36,13 @@ export const useMovieService = (): UseMovieService => {
   const toast = useToast();
 
   const fetchMovies = async (
-    options?: FetchMoviesOptions,
+    options: FetchMoviesOptions,
   ): Promise<Response | null> => {
     const params = new URLSearchParams({
       api_key: API_KEY,
       language: locale.value,
       page: movieStore.page.toString(),
-      query: movieStore.movieName.trim(),
+      query: options.movieName.trim(),
     });
 
     if (!options?.withoutLoading) {
