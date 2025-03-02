@@ -1,7 +1,7 @@
 {
   "name": "popular-movies",
   "description": "An application to search and favorite movies in the browser's Local Storage, using the The Movie Database (TMDB) API.",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "license": "MIT",
   "private": true,
   "main": "./src/main.ts",
