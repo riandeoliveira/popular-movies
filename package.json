@@ -42,13 +42,22 @@
     "vite-svg-loader": "^5.1.0",
     "vue-tsc": "^2.2.0"
   },
-  "keywords": [
-    "7daysofcode",
-    "alura",
-    "pinia",
-    "tailwindcss",
-    "typescript",
-    "vite",
-    "vue"
-  ]
+  "metadata": {
+    "stack": ["js", "pinia", "tailwind", "typescript", "vue"],
+    "thumbnail": "https://raw.githubusercontent.com/riandeoliveira/popular-movies/refs/heads/main/.github/assets/thumbnail.png",
+    "repoUrl": "https://github.com/riandeoliveira/popular-movies",
+    "projectUrl": "https://popular-movies-six.vercel.app/",
+    "private": false,
+    "new": false,
+    "info": {
+      "en-US": {
+        "full_name": "Popular Movies",
+        "description": "An application to search and favorite movies in the browser's Local Storage, using the The Movie Database (TMDB) API."
+      },
+      "pt-BR": {
+        "full_name": "Filmes Populares",
+        "description": "Aplicação para pesquisar e favoritar filmes no Armazenamento Local do navegador, fazendo uso da API do The Movie Database (TMDB)."
+      }
+    }
+  }
 }
