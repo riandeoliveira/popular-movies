@@ -43,18 +43,12 @@
     "vue-tsc": "^2.2.0"
   },
   "metadata": {
-    "stack": [
-      "js",
-      "pinia",
-      "tailwind",
-      "typescript",
-      "vue"
-    ],
+    "stack": ["js", "pinia", "tailwind", "typescript", "vue"],
     "thumbnailUrl": "https://raw.githubusercontent.com/riandeoliveira/popular-movies/refs/heads/main/.github/assets/thumbnail.png",
-    "repoUrl": "https://github.com/riandeoliveira/popular-movies",
+    "repositoryUrl": "https://github.com/riandeoliveira/popular-movies",
     "projectUrl": "https://popular-movies-six.vercel.app/",
-    "private": false,
-    "new": false,
+    "isPrivate": false,
+    "isNew": false,
     "info": {
       "enUs": {
         "fullName": "Popular Movies",
