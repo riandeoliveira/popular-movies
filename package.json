@@ -1,7 +1,7 @@
 {
   "name": "popular-movies",
   "description": "An application to search and favorite movies in the browser's Local Storage, using the The Movie Database (TMDB) API.",
-  "version": "2.0.15",
+  "version": "2.0.16",
   "license": "MIT",
   "private": true,
   "main": "./src/main.ts",
@@ -43,7 +43,13 @@
     "vue-tsc": "^2.2.0"
   },
   "metadata": {
-    "stack": ["js", "pinia", "tailwind", "ts", "vue"],
+    "stack": [
+      "js",
+      "pinia",
+      "tailwind",
+      "ts",
+      "vue"
+    ],
     "thumbnailUrl": "https://raw.githubusercontent.com/riandeoliveira/popular-movies/refs/heads/main/.github/assets/thumbnail.png",
     "repositoryUrl": "https://github.com/riandeoliveira/popular-movies",
     "projectUrl": "https://popular-movies-six.vercel.app/",
