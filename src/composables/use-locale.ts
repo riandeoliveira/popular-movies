@@ -21,10 +21,10 @@ export const useLocale = (): UseLocale => {
     meta: [
       {
         name: "description",
-        content: computed(() => t("meta-description")),
+        content: computed(() => t("meta_description")),
       },
     ],
-    title: computed(() => t("popular-movies")),
+    title: computed(() => t("popular_movies")),
   });
 
   return {

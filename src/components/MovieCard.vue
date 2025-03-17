@@ -36,7 +36,7 @@ const handleToggleMovie = (): void => handleFavoriteMovie(props);
         >
           <img
             :src="imageSrc"
-            :alt="t('movie-poster')"
+            :alt="t('movie_poster')"
             width="160"
             height="160"
             class="shadow-image rounded-full h-40 object-cover hover:translate-y-1 transition-transform"
@@ -87,7 +87,7 @@ const handleToggleMovie = (): void => handleFavoriteMovie(props);
     </div>
     <p class="text-c-gray-400 font-medium leading-8 text-justify max-w-[592px] w-full">
       <template v-if="overview">{{ overview }}</template>
-      <template v-else>{{ t("movie-without-overview") }}</template>
+      <template v-else>{{ t("movie_without_overview") }}</template>
     </p>
   </div>
 </template>

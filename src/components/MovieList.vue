@@ -29,7 +29,7 @@ const noMoviesFound = computed(
         :key="index"
       />
       <span class="text-white text-center" v-if="noMoviesFound">
-        {{ t("no-movies-found") }}
+        {{ t("no_movies_found") }}
       </span>
       <template v-else v-for="movie in filteredMovies">
         <MovieCard

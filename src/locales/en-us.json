@@ -1,22 +1,32 @@
 {
-  "change-language-to": "Change language to",
+  "change_language_to": "Change language to",
+
   "displaying": "Displaying",
+
   "favorite": "Favorite",
-  "fetch-movies-error": "Error: Unable to search movie list!",
-  "go-back-to-home": "Go back to home",
-  "items-per-page": "Items per page:",
-  "meta-description": "An application to search and favorite movies in the browser's Local Storage, using the The Movie Database (TMDB) API.",
-  "movie-poster": "Movie poster",
-  "movie-without-overview": "This movie doesn't have an overview!",
+  "fetch_movies_error": "Error: Unable to search movie list!",
+
+  "go_back_to_home": "Go back to home",
+
+  "items_per_page": "Items per page:",
+
+  "meta_description": "An application to search and favorite movies in the browser's Local Storage, using the The Movie Database (TMDB) API.",
+  "movie_poster": "Movie poster",
+  "movie_without_overview": "This movie doesn't have an overview!",
   "movies": "movies",
-  "next-page": "Next page",
-  "no-movies-found": "No movies found :(",
+
+  "next_page": "Next page",
+  "no_movies_found": "No movies found :(",
+
   "of": "of",
-  "page-not-found": "Page not found",
+
+  "page_not_found": "Page not found",
   "page": "Page",
-  "popular-movies": "Popular Movies",
-  "previous-page": "Previous page",
-  "show-all-movies": "Show all movies",
-  "show-my-favorite-movies-only": "Show my favorite movies only",
-  "type-a-movie-to-search": "Type a movie to search..."
+  "popular_movies": "Popular Movies",
+  "previous_page": "Previous page",
+
+  "show_all_movies": "Show all movies",
+  "show_my_favorite_movies_only": "Show my favorite movies only",
+
+  "type_a_movie_to_search": "Type a movie to search..."
 }

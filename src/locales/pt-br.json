@@ -1,22 +1,32 @@
 {
-  "change-language-to": "Alterar idioma para",
+  "change_language_to": "Alterar idioma para",
+
   "displaying": "Exibindo",
+
   "favorite": "Favoritar",
-  "fetch-movies-error": "Erro: Não foi possível buscar a listagem de filmes!",
-  "go-back-to-home": "Voltar para o início",
-  "items-per-page": "Itens por página:",
-  "meta-description": "Aplicação para pesquisar e favoritar filmes no Armazenamento Local do navegador, fazendo uso da API do The Movie Database (TMDB).",
-  "movie-poster": "Pôster do filme",
-  "movie-without-overview": "Este filme não possui uma descrição!",
+  "fetch_movies_error": "Erro: Não foi possível buscar a listagem de filmes!",
+
+  "go_back_to_home": "Voltar para o início",
+
+  "items_per_page": "Itens por página:",
+
+  "meta_description": "Aplicação para pesquisar e favoritar filmes no Armazenamento Local do navegador, fazendo uso da API do The Movie Database (TMDB).",
+  "movie_poster": "Pôster do filme",
+  "movie_without_overview": "Este filme não possui uma descrição!",
   "movies": "filmes",
-  "next-page": "Próxima página",
-  "no-movies-found": "Nenhum filme encontrado :(",
+
+  "next_page": "Próxima página",
+  "no_movies_found": "Nenhum filme encontrado :(",
+
   "of": "de",
-  "page-not-found": "Página não encontrada",
+
+  "page_not_found": "Página não encontrada",
   "page": "Página",
-  "popular-movies": "Filmes Populares",
-  "previous-page": "Página anterior",
-  "show-all-movies": "Mostrar todos os filmes",
-  "show-my-favorite-movies-only": "Mostrar meus filmes favoritos apenas",
-  "type-a-movie-to-search": "Digite algum filme para pesquisar..."
+  "popular_movies": "Filmes Populares",
+  "previous_page": "Página anterior",
+
+  "show_all_movies": "Mostrar todos os filmes",
+  "show_my_favorite_movies_only": "Mostrar meus filmes favoritos apenas",
+
+  "type_a_movie_to_search": "Digite algum filme para pesquisar..."
 }

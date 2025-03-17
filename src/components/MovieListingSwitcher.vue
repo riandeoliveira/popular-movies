@@ -11,8 +11,8 @@ const movieStore = useMovieStore();
 
 const checkboxAriaLabel = computed(() =>
   movieStore.isDisplayingFavoriteMovies
-    ? t("show-all-movies")
-    : t("show-my-favorite-movies-only"),
+    ? t("show_all_movies")
+    : t("show_my_favorite_movies_only"),
 );
 </script>
 
@@ -38,7 +38,7 @@ const checkboxAriaLabel = computed(() =>
       @keydown.space.prevent="handleChangeFilter"
       class="text-lg text-white font-semibold select-none cursor-pointer max-s-720:text-base"
     >
-      {{ t("show-my-favorite-movies-only") }}
+      {{ t("show_my_favorite_movies_only") }}
     </span>
   </div>
 </template>

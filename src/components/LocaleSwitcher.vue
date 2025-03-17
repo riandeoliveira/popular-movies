@@ -29,7 +29,7 @@ const handleSwitchLocale = async (newLocale: LocaleType): Promise<void> => {
     <button
       v-for="item in locales"
       type="button"
-      :aria-label="`${t('change-language-to')} ${item.code}`"
+      :aria-label="`${t('change_language_to')} ${item.code}`"
       @click="handleSwitchLocale(item.code)"
       class="cursor-pointer"
       :class="locale === item.code ? 'opacity-100' : 'opacity-25'"

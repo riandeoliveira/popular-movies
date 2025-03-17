@@ -20,13 +20,13 @@ const canDisablePreviousPageButton = computed(() => movieStore.page <= 1);
 <template>
   <div class="flex flex-col items-center text-white gap-2" v-if="!movieStore.isDisplayingFavoriteMovies">
     <span>
-      {{ t("items-per-page") }}
+      {{ t("items_per_page") }}
       {{ filteredMovies.length }}
     </span>
     <div class="flex items-center gap-4">
       <button
         type="button"
-        :aria-label="t('previous-page')"
+        :aria-label="t('previous_page')"
         :disabled="canDisablePreviousPageButton"
         @click="handlePreviousMoviesPage"
         class="cursor-pointer flex items-center justify-center w-8 h-8 rounded border border-transparent bg-c-blue-500 hover:enabled:bg-transparent hover:enabled:border-c-blue-500 transition-colors group disabled:opacity-50 disabled:cursor-not-allowed"
@@ -42,7 +42,7 @@ const canDisablePreviousPageButton = computed(() => movieStore.page <= 1);
       </div>
       <button
         type="button"
-        :aria-label="t('next-page')"
+        :aria-label="t('next_page')"
         :disabled="canDisableNextPageButton"
         @click="handleNextMoviesPage"
         class="cursor-pointer flex items-center justify-center w-8 h-8 rounded border border-transparent bg-c-blue-500 hover:enabled:bg-transparent hover:enabled:border-c-blue-500 transition-colors group disabled:opacity-50 disabled:cursor-not-allowed"

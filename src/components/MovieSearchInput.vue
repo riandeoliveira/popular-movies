@@ -16,7 +16,7 @@ const movieStore = useMovieStore();
         type="text"
         name="movie-search"
         autofocus
-        :placeholder="t('type-a-movie-to-search')"
+        :placeholder="t('type_a_movie_to_search')"
         maxlength="128"
         v-model="movieStore.movieName"
         @input="handleSearchMovies"

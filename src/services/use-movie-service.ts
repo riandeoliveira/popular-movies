@@ -55,7 +55,7 @@ export const useMovieService = (): UseMovieService => {
       );
 
       if (!response.ok) {
-        toast.error(t("fetch-movies-error"));
+        toast.error(t("fetch_movies_error"));
 
         return null;
       }
@@ -64,7 +64,7 @@ export const useMovieService = (): UseMovieService => {
 
       return data;
     } catch (error: unknown) {
-      toast.error(t("fetch-movies-error"));
+      toast.error(t("fetch_movies_error"));
     } finally {
       if (!options?.withoutLoading) {
         movieStore.isLoading = false;
